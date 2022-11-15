@@ -20,7 +20,7 @@ public class SchoolController {
     // TODO : get school repository by dependency injection*****************************************************
     @Autowired
     private SchoolRepository repository;
-    private Model addAttribute;
+    // private Model addAttribute;
 
     @GetMapping("/schools")
     public String getAll(Model model) {
@@ -42,7 +42,7 @@ public class SchoolController {
                 school = optionalSchool.get();
             }
         }
-        addAttribute = model.addAttribute("school", school);
+        model.addAttribute("school", school);
         return "school";
     }
 
